@@ -17,7 +17,7 @@ class TestMatrixOperations(unittest.TestCase):
         b = matrix([[5, 6], [7, 8]])
         result = a @ b
         expected = matrix([[19, 22], [43, 50]])
-        self.assertEqual(result, expected)
+        self.assertEqual(result.data, expected.data)
 
 if __name__ == "__main__":
     unittest.main()
