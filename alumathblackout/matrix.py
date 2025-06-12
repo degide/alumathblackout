@@ -23,6 +23,20 @@ class Matrix:
     def __repr__(self):
         """String representation of the matrix."""
         return str(self.data)
+    
+
+def matrix_multiply(a: Matrix, b: Matrix) -> Matrix:
+    """
+    Multiply two matrices using the @ operator.
+    
+    Args:
+        a (Matrix): First matrix.
+        b (Matrix): Second matrix.
+    
+    Returns:
+        Matrix: Resulting matrix after multiplication.
+    """
+    return a @ b
 
 
 def matrix(data: list[list[float]]) -> Matrix:
