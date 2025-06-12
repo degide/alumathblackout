@@ -25,3 +25,6 @@ classifiers = [
 [project.urls]
 homepage = "https://github.com/degide/alumathblackout"
 source = "https://github.com/degide/alumathblackout"
+
+[tool.setuptools.packages.find]
+include = ["alumathblackout"]
