@@ -31,11 +31,15 @@ pip install alumathblackout==1.0.0
 import alumathblackout as amb
 
 # Create matrices
-matrix_a = [[1, 2], [3, 4]]
-matrix_b = [[5, 6], [7, 8]]
+matrix_a = amb.matrix([[1, 2], [3, 4]])
+matrix_b = amb.matrix([[5, 6], [7, 8]])
 
 # Perform matrix multiplication
 result = amb.matrix_multiply(matrix_a, matrix_b)
+print(result)
+
+# Or use matrix multiplication operator @
+result = matrix_a @ matrix_b
 print(result)
 ```
 
@@ -55,11 +59,13 @@ print(result)
 import alumathblackout as amb
 
 # 2x2 matrices
-A = [[1, 2], 
-     [3, 4]]
+A = amb.matrix(
+     [[1, 2], 
+     [3, 4]])
 
-B = [[5, 6], 
-     [7, 8]]
+B = amb.matrix(
+     [[5, 6], 
+     [7, 8]])
 
 result = amb.matrix_multiply(A, B)
 # Output: [[19, 22], [43, 50]]
@@ -71,13 +77,15 @@ result = amb.matrix_multiply(A, B)
 import alumathblackout as amb
 
 # 2x3 matrix
-A = [[1, 2, 3], 
-     [4, 5, 6]]
+A = amb.matrix(
+     [[1, 2, 3], 
+     [4, 5, 6]])
 
 # 3x2 matrix  
-B = [[7, 8], 
+B = amb.matrix(
+     [[7, 8], 
      [9, 10], 
-     [11, 12]]
+     [11, 12]])
 
 result = amb.matrix_multiply(A, B)
 # Output: [[58, 64], [139, 154]]
@@ -88,11 +96,13 @@ result = amb.matrix_multiply(A, B)
 ```python
 import alumathblackout as amb
 
-A = [[1.5, 2.5], 
-     [3.5, 4.5]]
+A = amb.matrix(
+     [[1.5, 2.5], 
+     [3.5, 4.5]])
 
-B = [[0.5, 1.5], 
-     [2.5, 3.5]]
+B = amb.matrix(
+     [[0.5, 1.5], 
+     [2.5, 3.5]])
 
 result = amb.matrix_multiply(A, B)
 # Output: [[7.0, 11.0], [13.0, 21.0]]
@@ -117,7 +127,7 @@ Performs matrix multiplication of two matrices.
 
 **Example:**
 ```python
-result = amb.matrix_multiply([[1, 2]], [[3], [4]])
+result = amb.matrix_multiply(amb.matrix([[1, 2]]), amb.matrix([[3], [4]]))
 # Returns: [[11]]
 ```
 
@@ -134,8 +144,8 @@ The library provides clear error messages for common issues:
 import alumathblackout as amb
 
 # Incompatible dimensions
-A = [[1, 2]]      # 1x2
-B = [[3, 4, 5]]   # 1x3
+A = amb.matrix([[1, 2]])      # 1x2
+B = amb.matrix([[3, 4, 5]])   # 1x3
 
 try:
     result = amb.matrix_multiply(A, B)
