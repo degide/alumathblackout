@@ -51,5 +51,5 @@ def matrix(data: list[list[float]]) -> Matrix:
     """
     return Matrix(data)
 
-# Export the matrix function for external use
-__all__ = ["matrix"]
+# Export the matrix functions for external use
+__all__ = ["matrix", "matrix_multiply"]
